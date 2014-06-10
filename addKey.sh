@@ -15,3 +15,5 @@ else
   sed -i -e "1i IdentityFile $3" $1/.ssh/config
   echo "$1/.ssh/config updated"
 fi
+
+cat $1/.ssh/config
