@@ -9,11 +9,17 @@ validate_key() {
 }
 
 main() {
-  local ssh_key_path="$HOME/.ssh/id_rsa";
+  local ssh_key_path=$HOME/.ssh/id_rsa;
 
   local private_key=$(eval echo "\$${WERCKER_ADD_SSH_KEY_GH_BB_KEYNAME}_PRIVATE");
 
+ 
   validate_key "$private_key";
+  
+  if [ ! -d "$HOME/.ssh" ]; then
+   mkdir -p "$HOME/.ssh"
+   chown $USER "$HOME/.ssh"
+  fi
 
   echo -e "$private_key" > $ssh_key_path
 
