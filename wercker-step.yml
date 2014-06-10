@@ -1,7 +1,7 @@
-name: add-ssh-key
-version: 1.0.0
+name: add-ssh-key-gh-bb
+version: 0.0.1
 description: |
   Wercker allows you to generate SSH keys and expose them as via
   environment variables to your build or deployment pipeline.
-  This step can be used to write these values to an EdentityFile
-  and add them to the SSH configuration.
+  This step allows you to write an `.ssh/config` for bitbucket and github,
+  An examplary use would be for vcs repos in composer.

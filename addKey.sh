@@ -6,7 +6,8 @@ if [ ! -d "$1/.ssh" ]; then
 fi
 
 if [ ! -f $1/.ssh/config ]; then
-  echo "IdentityFile $3" > $1/.ssh/config
+  echo "Host bitbucket\n  HostName bitbucket.org\n  IdentityFile $3" > $1/.ssh/config
+  echo "Host github\n  HostName github.com\n  IdentityFile $3" >> $1/.ssh/config
   chown $2 $1/.ssh/config
   chmod 0600 $1/.ssh/config
   echo "$1/.ssh/config created"

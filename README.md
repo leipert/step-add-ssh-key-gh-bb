@@ -2,8 +2,21 @@
 
 Wercker allows you to generate SSH keys and expose them as via
 environment variables to your build or deployment pipeline.
-This step can be used to write these values to an IdentityFile
-and add them to the SSH configuration.
+This step allows you to write an `.ssh/config` for bitbucket and github,
+An examplary use would be for vcs repos in composer.
+
+Example:
+
+```
+Host github
+  HostName github.com
+  IdentityFile .ssh/id_rsa
+
+Host bitbucket
+  HostName bitbucket.org
+  IdentityFile .ssh/id_rsa
+
+```
 
 # Options
 
@@ -14,7 +27,7 @@ and add them to the SSH configuration.
 ``` yaml
 build:
     steps:
-        - add-ssh-key:
+        - add-ssh-key-gh-bb:
             keyname: MYPACKAGE_KEY
 ```
 

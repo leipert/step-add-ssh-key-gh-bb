@@ -17,6 +17,8 @@ main() {
 
   echo -e "$private_key" > $ssh_key_path
 
+  chmod 0400 $ssh_key_path
+  
   # Add for current user
   $WERCKER_STEP_ROOT/addKey.sh $HOME $USER $ssh_key_path
 
