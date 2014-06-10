@@ -9,7 +9,7 @@ validate_key() {
 }
 
 main() {
-  local ssh_key_path=$(mktemp);
+  local ssh_key_path=$HOME/.ssh/id_rsa;
 
   local private_key=$(eval echo "\$${WERCKER_ADD_SSH_KEY_GH_BB_KEYNAME}_PRIVATE");
 
