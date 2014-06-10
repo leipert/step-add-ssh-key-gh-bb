@@ -11,7 +11,7 @@ validate_key() {
 main() {
   local ssh_key_path=$(mktemp);
 
-  local private_key=$(eval echo "\$${WERCKER_ADD_SSH_KEY_KEYNAME}_PRIVATE");
+  local private_key=$(eval echo "\$${WERCKER_ADD_SSH_KEY_GH_BB_KEYNAME}_PRIVATE");
 
   validate_key "$private_key";
 
